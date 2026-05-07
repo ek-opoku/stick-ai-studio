@@ -1,5 +1,6 @@
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, useCurrentFrame, useVideoConfig } from "remotion";
 import { RenderSceneStage } from "../components/RenderSceneStage";
+import { SubtitleRenderer, type Subtitle } from "../components/SubtitleRenderer";
 import { defaultScene } from "../lib/defaultScene";
 import { frameToMilliseconds } from "../lib/remotionTime";
 import { sampleRenderScene } from "../lib/renderSceneEngine";
@@ -9,12 +10,16 @@ export type SceneCompositionProps = {
   scene?: RenderSceneDefinition;
   backgroundColor?: string;
   showDebugOverlay?: boolean;
+  audioUrl?: string;
+  subtitles?: Subtitle[];
 };
 
 export function SceneComposition({
   scene = defaultScene,
   backgroundColor = "#111827",
-  showDebugOverlay = false
+  showDebugOverlay = false,
+  audioUrl,
+  subtitles = []
 }: SceneCompositionProps) {
   const frame = useCurrentFrame();
   const { fps, height, width } = useVideoConfig();
@@ -53,6 +58,16 @@ export function SceneComposition({
           <RenderSceneStage frame={sceneFrame} height={scene.height} width={scene.width} />
         </div>
       </div>
+
+      {audioUrl ? <Audio src={audioUrl} /> : null}
+
+      {subtitles.length > 0 ? (
+        <SubtitleRenderer
+          bottom={height * 0.1}
+          fontSize={Math.round(height * 0.045)}
+          subtitles={subtitles}
+        />
+      ) : null}
 
       {showDebugOverlay ? (
         <div

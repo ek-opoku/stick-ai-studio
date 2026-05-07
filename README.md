@@ -189,3 +189,40 @@ Example scene character:
 - Rendered outputs live under `exports/{projectId}/`.
 
 This makes backup and migration simple: copy the workspace folder.
+
+## FFmpeg Export Pipeline
+
+The studio includes a high-performance export pipeline powered by Remotion and FFmpeg.
+
+### Features
+- **1080p High Definition**: Default rendering at 1080p (720p and 4k also supported).
+- **MP4/H.264 Encoding**: Industry-standard compression for universal compatibility.
+- **Audio Support**: Seamlessly merge audio tracks into your animation.
+- **Subtitle Burn-in**: Burn subtitles directly into the video stream.
+- **Vertical Video**: Support for 9:16 (TikTok/Reels) and 1:1 (Instagram) aspect ratios.
+
+### Usage
+Trigger a render via the API with custom export settings:
+
+```bash
+curl -X POST http://localhost:8000/renders \
+  -H "Content-Type: application/json" \
+  -d '{
+    "projectId": "your-project-id",
+    "exportConfig": {
+      "aspectRatio": "9:16",
+      "resolution": "1080p",
+      "burnInSubtitles": true,
+      "subtitles": [
+        {"text": "Hello Stick Figure!", "startMs": 0, "endMs": 2000}
+      ]
+    }
+  }'
+```
+
+Then run the job:
+```bash
+curl -X POST http://localhost:8000/renders/{job_id}/run
+```
+
+The resulting file will be saved in the `exports/` directory.

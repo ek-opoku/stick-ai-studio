@@ -12,11 +12,26 @@ export const projectSummarySchema = z.object({
   updatedAt: z.string()
 });
 
+export const exportConfigSchema = z.object({
+  format: z.enum(["mp4", "webm"]).default("mp4"),
+  resolution: z.enum(["720p", "1080p", "4k"]).default("1080p"),
+  aspectRatio: z.enum(["16:9", "9:16", "1:1"]).default("16:9"),
+  includeAudio: z.boolean().default(true),
+  audioUrl: z.string().optional(),
+  burnInSubtitles: z.boolean().default(false),
+  subtitles: z.array(z.object({
+    text: z.string(),
+    startMs: z.number(),
+    endMs: z.number()
+  })).optional()
+});
+
 export const renderJobSchema = z.object({
   id: z.string(),
   projectId: z.string(),
   compositionId: z.string(),
   status: z.enum(["queued", "rendering", "completed", "failed"]),
+  exportConfig: exportConfigSchema.optional(),
   outputPath: z.string().nullable().optional(),
   createdAt: z.string(),
   updatedAt: z.string()

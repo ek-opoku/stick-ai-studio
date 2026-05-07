@@ -84,6 +84,7 @@ def queue_render(payload: CreateRenderRequest) -> RenderJob:
         projectId=payload.projectId,
         compositionId=payload.compositionId,
         status="queued",
+        exportConfig=payload.exportConfig,
         createdAt=now,
         updatedAt=now,
     )
@@ -107,8 +108,17 @@ def run_render(job_id: str) -> RenderJob:
     jobs[job_index] = job.model_dump(mode="json")
     storage.write_json(storage.exports / "render-jobs.json", jobs)
 
+    # Construct Remotion props
+    import json
+    props = json.dumps({"exportConfig": job.exportConfig.model_dump()}) if job.exportConfig else "{}"
+    
+    # Escape quotes for shell command if needed, though subprocess.run with a list is better.
+    # But settings.renderer_command is currently a string "npm --workspace renderer run render"
+    # We'll append the props to it.
+    render_command = f'{settings.renderer_command} -- --props \'{props}\''
+
     result = subprocess.run(
-        settings.renderer_command,
+        render_command,
         cwd=storage.root,
         shell=True,
         capture_output=True,
