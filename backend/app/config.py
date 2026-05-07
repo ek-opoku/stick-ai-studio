@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     storage_root: Path = Path("..")
-    renderer_command: str = "npm --workspace renderer run render"
+    renderer_command: str = "npm --workspace renderer run render:mp4"
 
     model_config = SettingsConfigDict(
         env_file=".env",

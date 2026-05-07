@@ -80,6 +80,21 @@ npm run render
 
 Rendered files are written to `exports/`.
 
+The renderer workspace exposes the render pipeline directly:
+
+```bash
+npm run render:mp4
+npm run render:frames
+npm run dev:renderer
+```
+
+- `render:mp4` exports `exports/scene.mp4`.
+- `render:frames` exports an image sequence into `exports/frames/`.
+- `dev:renderer` opens Remotion Studio on http://localhost:3001.
+- `SceneComposition` is the reusable Remotion composition for scene playback.
+
+The Remotion pipeline uses `useCurrentFrame()` and the composition FPS to convert frames into scene milliseconds, then samples the same JSON scene and motion definitions used by the app.
+
 The backend can also queue and run a local render job:
 
 ```bash

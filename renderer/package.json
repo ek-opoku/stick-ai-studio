@@ -5,15 +5,19 @@
   "scripts": {
     "dev": "remotion studio src/index.ts --port 3001",
     "build": "remotion bundle src/index.ts",
-    "render": "remotion render src/index.ts MainComposition ../exports/main.mp4",
+    "render": "npm run render:mp4",
+    "render:mp4": "node scripts/render.mjs mp4",
+    "render:frames": "node scripts/render.mjs frames",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.180",
     "@remotion/player": "^4.0.180",
     "@stick-ai-studio/shared": "0.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "remotion": "^4.0.180",
-    "zod": "^3.23.8"
+    "zod": "4.3.6"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",

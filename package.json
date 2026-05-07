@@ -15,6 +15,8 @@
     "dev:renderer": "npm --workspace renderer run dev",
     "build": "npm --workspace shared run build && npm --workspace frontend run build && npm --workspace renderer run build",
     "render": "npm --workspace renderer run render",
+    "render:mp4": "npm --workspace renderer run render:mp4",
+    "render:frames": "npm --workspace renderer run render:frames",
     "typecheck": "npm --workspace shared run typecheck && npm --workspace frontend run typecheck && npm --workspace renderer run typecheck",
     "lint": "npm --workspace frontend run lint"
   },

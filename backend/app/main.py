@@ -119,7 +119,7 @@ def run_render(job_id: str) -> RenderJob:
     job.status = "completed" if result.returncode == 0 else "failed"
     job.updatedAt = datetime.now(timezone.utc)
     if result.returncode == 0:
-        job.outputPath = str(storage.exports / "main.mp4")
+        job.outputPath = str(storage.exports / "scene.mp4")
 
     jobs[job_index] = job.model_dump(mode="json")
     storage.write_json(storage.exports / "render-jobs.json", jobs)

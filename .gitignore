@@ -3,6 +3,7 @@ node_modules/
 out/
 dist/
 .turbo/
+renderer/build/
 frontend-dev.*.log
 
 .venv/
