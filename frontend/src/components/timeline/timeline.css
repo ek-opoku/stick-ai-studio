@@ -1,0 +1,224 @@
+.timeline-studio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.timeline-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+/* ── Playback Controls ── */
+
+.playback-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #f5f2ec;
+  border: 1px solid #e4ddd3;
+}
+
+.playback-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d7d0c4;
+  border-radius: 8px;
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+
+.playback-btn:hover {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.playback-btn.active {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}
+
+.playback-btn.active:hover {
+  background: #1f2937;
+  box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.15);
+}
+
+.speed-select {
+  padding: 6px 10px;
+  border: 1px solid #d7d0c4;
+  border-radius: 6px;
+  background: #fff;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.speed-select:hover,
+.speed-select:focus {
+  border-color: #2563eb;
+}
+
+.time-display {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #374151;
+  letter-spacing: 0.3px;
+}
+
+.time-display .separator {
+  color: #9ca3af;
+  margin: 0 4px;
+}
+
+/* ── Timeline Track ── */
+
+.timeline-track-container {
+  position: relative;
+  user-select: none;
+}
+
+.timeline-ruler {
+  display: flex;
+  position: relative;
+  height: 22px;
+  margin-bottom: 4px;
+  padding: 0 8px;
+}
+
+.ruler-tick {
+  position: absolute;
+  bottom: 0;
+  width: 1px;
+  height: 8px;
+  background: #d7d0c4;
+}
+
+.ruler-tick.major {
+  height: 14px;
+  background: #9ca3af;
+}
+
+.ruler-label {
+  position: absolute;
+  top: 0;
+  font-size: 10px;
+  font-weight: 500;
+  color: #9ca3af;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.timeline-track {
+  position: relative;
+  height: 52px;
+  border-radius: 8px;
+  background: #f0ece4;
+  border: 1px solid #e4ddd3;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.timeline-clip {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: filter 0.12s;
+}
+
+.timeline-clip:hover {
+  filter: brightness(1.08);
+}
+
+.clip-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 8px;
+  pointer-events: none;
+}
+
+.clip-blend-in {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.25) 0%, transparent 100%);
+  border-radius: 6px 0 0 6px;
+  pointer-events: none;
+}
+
+.clip-blend-out {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.25) 0%, transparent 100%);
+  border-radius: 0 6px 6px 0;
+  pointer-events: none;
+}
+
+/* ── Cursor / Playhead ── */
+
+.timeline-cursor {
+  position: absolute;
+  top: -4px;
+  bottom: -1px;
+  width: 2px;
+  background: #111827;
+  pointer-events: none;
+  z-index: 10;
+  transition: left 0.03s linear;
+}
+
+.cursor-handle {
+  position: absolute;
+  top: -2px;
+  left: -5px;
+  width: 12px;
+  height: 12px;
+  background: #111827;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+  cursor: grab;
+}
+
+.cursor-handle:active {
+  cursor: grabbing;
+  transform: scale(1.15);
+}
+
+.timeline-cursor.dragging {
+  transition: none;
+}
+
+.timeline-cursor.dragging .cursor-handle {
+  transform: scale(1.15);
+  cursor: grabbing;
+}

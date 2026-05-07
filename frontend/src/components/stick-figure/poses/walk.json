@@ -1,0 +1,22 @@
+{
+  "id": "walk",
+  "name": "Walk",
+  "body": {
+    "x": 0,
+    "y": -3
+  },
+  "head": {
+    "tilt": 3
+  },
+  "joints": {
+    "torso": -3,
+    "leftShoulder": -22,
+    "leftElbow": 28,
+    "rightShoulder": 24,
+    "rightElbow": -18,
+    "leftHip": 24,
+    "leftKnee": -18,
+    "rightHip": -20,
+    "rightKnee": 34
+  }
+}

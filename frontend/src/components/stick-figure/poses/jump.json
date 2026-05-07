@@ -1,0 +1,22 @@
+{
+  "id": "jump",
+  "name": "Jump",
+  "body": {
+    "x": 0,
+    "y": -24
+  },
+  "head": {
+    "tilt": -8
+  },
+  "joints": {
+    "torso": -6,
+    "leftShoulder": -48,
+    "leftElbow": 18,
+    "rightShoulder": 48,
+    "rightElbow": -18,
+    "leftHip": -18,
+    "leftKnee": 42,
+    "rightHip": 18,
+    "rightKnee": -42
+  }
+}

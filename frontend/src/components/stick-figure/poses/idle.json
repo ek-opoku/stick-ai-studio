@@ -1,0 +1,22 @@
+{
+  "id": "idle",
+  "name": "Idle",
+  "body": {
+    "x": 0,
+    "y": 0
+  },
+  "head": {
+    "tilt": -2
+  },
+  "joints": {
+    "torso": 0,
+    "leftShoulder": 8,
+    "leftElbow": -10,
+    "rightShoulder": -8,
+    "rightElbow": 10,
+    "leftHip": -2,
+    "leftKnee": 4,
+    "rightHip": 2,
+    "rightKnee": -4
+  }
+}

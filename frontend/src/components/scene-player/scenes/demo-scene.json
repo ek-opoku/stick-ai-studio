@@ -1,0 +1,136 @@
+{
+  "id": "demo-scene",
+  "name": "Studio Motion Test",
+  "width": 960,
+  "height": 420,
+  "durationMs": 7200,
+  "loop": "loop",
+  "layers": [
+    {
+      "id": "back-actors",
+      "name": "Back Actors",
+      "zIndex": 10,
+      "opacity": 0.88
+    },
+    {
+      "id": "front-actors",
+      "name": "Front Actors",
+      "zIndex": 20,
+      "opacity": 1
+    },
+    {
+      "id": "gesture-actors",
+      "name": "Gesture Actors",
+      "zIndex": 30,
+      "opacity": 1
+    }
+  ],
+  "characters": [
+    {
+      "id": "walker",
+      "name": "Walker",
+      "layerId": "front-actors",
+      "x": 165,
+      "y": 92,
+      "scale": 1,
+      "zIndex": 1,
+      "colors": {
+        "stroke": "#111827",
+        "headFill": "#f7f3ec",
+        "jointFill": "#4f6f52"
+      },
+      "clips": [
+        {
+          "id": "walker-walk",
+          "motionId": "walk",
+          "startMs": 0,
+          "endMs": 4200,
+          "blendInMs": 0,
+          "blendOutMs": 350
+        },
+        {
+          "id": "walker-wave",
+          "motionId": "wave",
+          "startMs": 3850,
+          "endMs": 7200,
+          "blendInMs": 350,
+          "blendOutMs": 0
+        }
+      ]
+    },
+    {
+      "id": "runner",
+      "name": "Runner",
+      "layerId": "back-actors",
+      "x": 455,
+      "y": 112,
+      "scale": 0.86,
+      "zIndex": 2,
+      "opacity": 0.9,
+      "colors": {
+        "stroke": "#1f2937",
+        "headFill": "#eef2ff",
+        "jointFill": "#2563eb"
+      },
+      "clips": [
+        {
+          "id": "runner-run",
+          "motionId": "run",
+          "startMs": 0,
+          "endMs": 5200,
+          "speed": 1.15,
+          "blendInMs": 0,
+          "blendOutMs": 250
+        },
+        {
+          "id": "runner-jump",
+          "motionId": "jump",
+          "startMs": 4950,
+          "endMs": 7200,
+          "blendInMs": 250,
+          "blendOutMs": 0
+        }
+      ]
+    },
+    {
+      "id": "reactor",
+      "name": "Reactor",
+      "layerId": "gesture-actors",
+      "x": 705,
+      "y": 94,
+      "scale": 0.96,
+      "zIndex": 3,
+      "colors": {
+        "stroke": "#27272a",
+        "headFill": "#fff7ed",
+        "jointFill": "#f97316"
+      },
+      "clips": [
+        {
+          "id": "reactor-point",
+          "motionId": "point",
+          "startMs": 0,
+          "endMs": 2300,
+          "blendInMs": 0,
+          "blendOutMs": 300
+        },
+        {
+          "id": "reactor-laugh",
+          "motionId": "laugh",
+          "startMs": 2000,
+          "endMs": 5200,
+          "blendInMs": 300,
+          "blendOutMs": 300
+        },
+        {
+          "id": "reactor-cry",
+          "motionId": "cry",
+          "startMs": 4900,
+          "endMs": 7200,
+          "blendInMs": 300,
+          "blendOutMs": 0
+        }
+      ]
+    }
+  ]
+}

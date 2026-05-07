@@ -1,0 +1,87 @@
+{
+  "id": "jump",
+  "name": "Jump",
+  "durationMs": 1000,
+  "loop": "once",
+  "keyframes": [
+    {
+      "timeMs": 0,
+      "label": "crouch",
+      "easing": "smoothstep",
+      "pose": {
+        "body": { "x": 0, "y": 10 },
+        "head": { "tilt": -5 },
+        "joints": {
+          "torso": -8,
+          "leftShoulder": 24,
+          "leftElbow": 20,
+          "rightShoulder": -24,
+          "rightElbow": 20,
+          "leftHip": -16,
+          "leftKnee": 58,
+          "rightHip": 16,
+          "rightKnee": -58
+        }
+      }
+    },
+    {
+      "timeMs": 320,
+      "label": "takeoff",
+      "easing": "sine",
+      "pose": {
+        "body": { "x": 0, "y": -28 },
+        "head": { "tilt": -10 },
+        "joints": {
+          "torso": -6,
+          "leftShoulder": -52,
+          "leftElbow": 16,
+          "rightShoulder": 52,
+          "rightElbow": -16,
+          "leftHip": -20,
+          "leftKnee": 36,
+          "rightHip": 20,
+          "rightKnee": -36
+        }
+      }
+    },
+    {
+      "timeMs": 650,
+      "label": "air",
+      "easing": "smoothstep",
+      "pose": {
+        "body": { "x": 0, "y": -36 },
+        "head": { "tilt": -3 },
+        "joints": {
+          "torso": 0,
+          "leftShoulder": -18,
+          "leftElbow": 28,
+          "rightShoulder": 18,
+          "rightElbow": -28,
+          "leftHip": 12,
+          "leftKnee": 32,
+          "rightHip": -12,
+          "rightKnee": -32
+        }
+      }
+    },
+    {
+      "timeMs": 1000,
+      "label": "land",
+      "pose": {
+        "body": { "x": 0, "y": 6 },
+        "head": { "tilt": 4 },
+        "joints": {
+          "torso": 5,
+          "leftShoulder": 18,
+          "leftElbow": 18,
+          "rightShoulder": -18,
+          "rightElbow": 18,
+          "leftHip": -10,
+          "leftKnee": 42,
+          "rightHip": 10,
+          "rightKnee": -42
+        }
+      }
+    }
+  ]
+}

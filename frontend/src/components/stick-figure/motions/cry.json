@@ -1,0 +1,88 @@
+{
+  "id": "cry",
+  "name": "Cry",
+  "durationMs": 1100,
+  "loop": "loop",
+  "keyframes": [
+    {
+      "timeMs": 0,
+      "label": "slump",
+      "easing": "sine",
+      "pose": {
+        "body": { "x": 0, "y": 5 },
+        "head": { "tilt": 12 },
+        "joints": {
+          "torso": 10,
+          "leftShoulder": 34,
+          "leftElbow": 48,
+          "rightShoulder": -34,
+          "rightElbow": -48,
+          "leftHip": -5,
+          "leftKnee": 12,
+          "rightHip": 5,
+          "rightKnee": -12
+        }
+      }
+    },
+    {
+      "timeMs": 275,
+      "label": "sob down",
+      "easing": "smoothstep",
+      "pose": {
+        "body": { "x": -1, "y": 10 },
+        "head": { "tilt": 18 },
+        "joints": {
+          "torso": 16,
+          "leftShoulder": 40,
+          "leftElbow": 56,
+          "rightShoulder": -40,
+          "rightElbow": -56,
+          "leftHip": -8,
+          "leftKnee": 18,
+          "rightHip": 8,
+          "rightKnee": -18
+        }
+      }
+    },
+    {
+      "timeMs": 550,
+      "label": "sob up",
+      "easing": "sine",
+      "pose": {
+        "body": { "x": 0, "y": 4 },
+        "head": { "tilt": 10 },
+        "joints": {
+          "torso": 8,
+          "leftShoulder": 32,
+          "leftElbow": 44,
+          "rightShoulder": -32,
+          "rightElbow": -44,
+          "leftHip": -5,
+          "leftKnee": 12,
+          "rightHip": 5,
+          "rightKnee": -12
+        }
+      }
+    },
+    {
+      "timeMs": 825,
+      "label": "sob down",
+      "easing": "smoothstep",
+      "pose": {
+        "body": { "x": 1, "y": 9 },
+        "head": { "tilt": 16 },
+        "joints": {
+          "torso": 15,
+          "leftShoulder": 38,
+          "leftElbow": 54,
+          "rightShoulder": -38,
+          "rightElbow": -54,
+          "leftHip": -8,
+          "leftKnee": 18,
+          "rightHip": 8,
+          "rightKnee": -18
+        }
+      }
+    }
+  ]
+}

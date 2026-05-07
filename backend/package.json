@@ -1,0 +1,9 @@
+{
+  "name": "@stick-ai-studio/backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": ".venv\\Scripts\\python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000",
+    "dev:system-python": "python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000"
+  }
+}

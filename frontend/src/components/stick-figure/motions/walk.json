@@ -1,0 +1,88 @@
+{
+  "id": "walk",
+  "name": "Walk",
+  "durationMs": 900,
+  "loop": "loop",
+  "keyframes": [
+    {
+      "timeMs": 0,
+      "label": "left contact",
+      "easing": "smoothstep",
+      "pose": {
+        "body": { "x": 0, "y": 0 },
+        "head": { "tilt": 2 },
+        "joints": {
+          "torso": -2,
+          "leftShoulder": 24,
+          "leftElbow": 8,
+          "rightShoulder": -24,
+          "rightElbow": 18,
+          "leftHip": -22,
+          "leftKnee": 8,
+          "rightHip": 22,
+          "rightKnee": 30
+        }
+      }
+    },
+    {
+      "timeMs": 225,
+      "label": "passing high",
+      "easing": "sine",
+      "pose": {
+        "body": { "x": 1, "y": -6 },
+        "head": { "tilt": 0 },
+        "joints": {
+          "torso": 0,
+          "leftShoulder": 0,
+          "leftElbow": 12,
+          "rightShoulder": 0,
+          "rightElbow": 12,
+          "leftHip": 0,
+          "leftKnee": 22,
+          "rightHip": 0,
+          "rightKnee": 10
+        }
+      }
+    },
+    {
+      "timeMs": 450,
+      "label": "right contact",
+      "easing": "smoothstep",
+      "pose": {
+        "body": { "x": 0, "y": 0 },
+        "head": { "tilt": -2 },
+        "joints": {
+          "torso": 2,
+          "leftShoulder": -24,
+          "leftElbow": 18,
+          "rightShoulder": 24,
+          "rightElbow": 8,
+          "leftHip": 22,
+          "leftKnee": 30,
+          "rightHip": -22,
+          "rightKnee": 8
+        }
+      }
+    },
+    {
+      "timeMs": 675,
+      "label": "passing high",
+      "easing": "sine",
+      "pose": {
+        "body": { "x": -1, "y": -6 },
+        "head": { "tilt": 0 },
+        "joints": {
+          "torso": 0,
+          "leftShoulder": 0,
+          "leftElbow": 12,
+          "rightShoulder": 0,
+          "rightElbow": 12,
+          "leftHip": 0,
+          "leftKnee": 10,
+          "rightHip": 0,
+          "rightKnee": 22
+        }
+      }
+    }
+  ]
+}

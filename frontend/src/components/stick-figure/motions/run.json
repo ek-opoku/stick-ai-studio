@@ -1,0 +1,88 @@
+{
+  "id": "run",
+  "name": "Run",
+  "durationMs": 560,
+  "loop": "loop",
+  "keyframes": [
+    {
+      "timeMs": 0,
+      "label": "drive",
+      "easing": "easeInOut",
+      "pose": {
+        "body": { "x": 0, "y": -4 },
+        "head": { "tilt": 4 },
+        "joints": {
+          "torso": 5,
+          "leftShoulder": 44,
+          "leftElbow": 28,
+          "rightShoulder": -42,
+          "rightElbow": 20,
+          "leftHip": -38,
+          "leftKnee": 18,
+          "rightHip": 42,
+          "rightKnee": 54
+        }
+      }
+    },
+    {
+      "timeMs": 140,
+      "label": "float",
+      "easing": "sine",
+      "pose": {
+        "body": { "x": 1, "y": -15 },
+        "head": { "tilt": 2 },
+        "joints": {
+          "torso": 3,
+          "leftShoulder": 8,
+          "leftElbow": 20,
+          "rightShoulder": -8,
+          "rightElbow": 20,
+          "leftHip": -10,
+          "leftKnee": 42,
+          "rightHip": 12,
+          "rightKnee": 34
+        }
+      }
+    },
+    {
+      "timeMs": 280,
+      "label": "drive opposite",
+      "easing": "easeInOut",
+      "pose": {
+        "body": { "x": 0, "y": -4 },
+        "head": { "tilt": -4 },
+        "joints": {
+          "torso": -5,
+          "leftShoulder": -42,
+          "leftElbow": 20,
+          "rightShoulder": 44,
+          "rightElbow": 28,
+          "leftHip": 42,
+          "leftKnee": 54,
+          "rightHip": -38,
+          "rightKnee": 18
+        }
+      }
+    },
+    {
+      "timeMs": 420,
+      "label": "float opposite",
+      "easing": "sine",
+      "pose": {
+        "body": { "x": -1, "y": -15 },
+        "head": { "tilt": -2 },
+        "joints": {
+          "torso": -3,
+          "leftShoulder": -8,
+          "leftElbow": 20,
+          "rightShoulder": 8,
+          "rightElbow": 20,
+          "leftHip": 12,
+          "leftKnee": 34,
+          "rightHip": -10,
+          "rightKnee": 42
+        }
+      }
+    }
+  ]
+}

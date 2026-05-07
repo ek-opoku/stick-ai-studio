@@ -1,0 +1,67 @@
+{
+  "id": "sit",
+  "name": "Sit",
+  "durationMs": 900,
+  "loop": "once",
+  "keyframes": [
+    {
+      "timeMs": 0,
+      "label": "standing",
+      "easing": "smoothstep",
+      "pose": {
+        "body": { "x": 0, "y": 0 },
+        "head": { "tilt": 0 },
+        "joints": {
+          "torso": 0,
+          "leftShoulder": 5,
+          "leftElbow": 8,
+          "rightShoulder": -5,
+          "rightElbow": 8,
+          "leftHip": 0,
+          "leftKnee": 0,
+          "rightHip": 0,
+          "rightKnee": 0
+        }
+      }
+    },
+    {
+      "timeMs": 450,
+      "label": "lowering",
+      "easing": "easeInOut",
+      "pose": {
+        "body": { "x": 0, "y": 18 },
+        "head": { "tilt": 3 },
+        "joints": {
+          "torso": 8,
+          "leftShoulder": 12,
+          "leftElbow": 16,
+          "rightShoulder": -12,
+          "rightElbow": 16,
+          "leftHip": 42,
+          "leftKnee": 54,
+          "rightHip": -42,
+          "rightKnee": -54
+        }
+      }
+    },
+    {
+      "timeMs": 900,
+      "label": "seated",
+      "pose": {
+        "body": { "x": 0, "y": 28 },
+        "head": { "tilt": 0 },
+        "joints": {
+          "torso": 4,
+          "leftShoulder": 8,
+          "leftElbow": 20,
+          "rightShoulder": -8,
+          "rightElbow": 20,
+          "leftHip": 68,
+          "leftKnee": 64,
+          "rightHip": -68,
+          "rightKnee": -64
+        }
+      }
+    }
+  ]
+}

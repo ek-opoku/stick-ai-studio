@@ -1,0 +1,22 @@
+{
+  "name": "@stick-ai-studio/renderer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "remotion studio src/index.ts --port 3001",
+    "build": "remotion bundle src/index.ts",
+    "render": "remotion render src/index.ts MainComposition ../exports/main.mp4",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.180",
+    "@remotion/player": "^4.0.180",
+    "@stick-ai-studio/shared": "0.1.0",
+    "remotion": "^4.0.180",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^5.5.3"
+  }
+}
